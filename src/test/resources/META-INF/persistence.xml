@@ -1,0 +1,348 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="examples.annotations"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.annotations.Users</class>
+		<class>org.cbenaveen.jpa.annotations.UsersWithCustomTableInformations</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="examples.fetchmode"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.annotations.Users</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="examples.idgeneration"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.idgeneration.Employee</class>
+		<class>org.cbenaveen.jpa.idgeneration.EmployeeGenUsinCustomSequence</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="examples.idgeneration.table"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.idgeneration.Students</class>
+		<class>org.cbenaveen.jpa.idgeneration.Teachers</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+
+	<persistence-unit name="examples.embadded"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.embadded.Company</class>
+		<class>org.cbenaveen.jpa.embadded.Address</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="examples.embadded.attributeoverrides"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.embadded.attributeoverrides.Company</class>
+		<class>org.cbenaveen.jpa.embadded.attributeoverrides.Address</class>
+		<class>org.cbenaveen.jpa.embadded.attributeoverrides.Employee</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.one2one.unidirectonal"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.one2one.unidirectonal.Course</class>
+		<class>org.cbenaveen.jpa.composition.one2one.unidirectonal.Instructor</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="examples.composition.one2one.bidirectional"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.one2one.bidirectonal.Course</class>
+		<class>org.cbenaveen.jpa.composition.one2one.bidirectonal.Instructor</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.one2many.unidirectonal"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.one2many.unidirectional.StockDailyRecord</class>
+		<class>org.cbenaveen.jpa.composition.one2many.unidirectional.Stock</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.one2many.bidirectonal"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.one2many.bidirectional.Department</class>
+		<class>org.cbenaveen.jpa.composition.one2many.bidirectional.Students</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.many2many.unidirectonal"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.many2many.unidirectional.Book</class>
+		<class>org.cbenaveen.jpa.composition.many2many.unidirectional.Author</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.many2many.bidirectonal"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.composition.many2many.bidirectional.Book</class>
+		<class>org.cbenaveen.jpa.composition.many2many.bidirectional.Author</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.inheritance.singletable"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.inheritance.singletable.BankAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.singletable.CurrentAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.singletable.DepositAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.singletable.FixedDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.singletable.RecurringDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.singletable.SavingsAccount</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.inheritance.jointable"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.inheritance.jointable.BankAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.jointable.CurrentAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.jointable.DepositAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.jointable.FixedDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.jointable.RecurringDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.jointable.SavingsAccount</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="examples.composition.inheritance.tableperclass"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- List all your entities to be managed by this persistence context -->
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.BankAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.CurrentAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.DepositAccount</class>
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.FixedDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.RecurringDeposit</class>
+		<class>org.cbenaveen.jpa.inheritance.tableperclass.SavingsAccount</class>
+
+		<!-- this persistence context's configuration -->
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="${postgres.db.url}" />
+			<property name="javax.persistence.jdbc.user" value="${db.username}" />
+			<property name="javax.persistence.jdbc.password" value="${db.password}" />
+			<property name="javax.persistence.jdbc.driver" value="${postgres.driver}" />
+
+			<property name="hibernate.show_sql" value="${show.sql}" />
+			<property name="hibernate.format_sql" value="${format.sql}" />
+			<property name="hibernate.dialect" value="${postgres.dialect}" />
+			<property name="hibernate.hbm2ddl.auto" value="${hbm2ddl.auto}" />
+		</properties>
+	</persistence-unit>
+</persistence>
